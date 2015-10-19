@@ -1,0 +1,427 @@
+body {
+    font-family: "Calibri", Tahoma, sans-serif;
+    width: 1024px;
+    height: 100%;
+    /*text-align: center;*/
+    margin: 20px auto;
+    border-radius: 20px;
+    /*border: solid*/
+        /*#99D6EB;*/
+}
+
+#header {
+    width: 100%;
+    height: 190px;
+    margin-top: 0px;
+    margin-bottom: 10px;
+    padding-top: 0px;
+    background-image: url("../img/mikumi-bw.jpg");
+    background-repeat: no-repeat;
+    background-size: 100%;
+    /*background:*/
+         /*#E0E0E0;*/
+}
+
+#header:hover {
+    cursor: pointer;
+}
+
+#menu {
+    height: 35px;
+    background: #d0d0d0; /* Old browsers */
+    background: -moz-linear-gradient(top,  #d0d0d0 0%, #c9c9c9 50%, #c0c0c0 51%, #eaeaea 100%); /* FF3.6+ */
+    background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#d0d0d0), color-stop(50%,#c9c9c9), color-stop(51%,#c0c0c0), color-stop(100%,#eaeaea)); /* Chrome,Safari4+ */
+    background: -webkit-linear-gradient(top,  #d0d0d0 0%,#c9c9c9 50%,#c0c0c0 51%,#eaeaea 100%); /* Chrome10+,Safari5.1+ */
+    background: -o-linear-gradient(top,  #d0d0d0 0%,#c9c9c9 50%,#c0c0c0 51%,#eaeaea 100%); /* Opera 11.10+ */
+    background: -ms-linear-gradient(top,  #d0d0d0 0%,#c9c9c9 50%,#c0c0c0 51%,#eaeaea 100%); /* IE10+ */
+    background: linear-gradient(to bottom,  #d0d0d0 0%,#c9c9c9 50%,#c0c0c0 51%,#eaeaea 100%); /* W3C */
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#d0d0d0', endColorstr='#eaeaea',GradientType=0 ); /* IE6-9 */
+}
+
+.menuItem {
+    background: #cecece; /* Old browsers */
+    background: -moz-linear-gradient(top,  #cecece 0%, #c7c7c7 50%, #bebebe 51%, #e7e7e7 100%); /* FF3.6+ */
+    background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#cecece), color-stop(50%,#c7c7c7), color-stop(51%,#bebebe), color-stop(100%,#e7e7e7)); /* Chrome,Safari4+ */
+    background: -webkit-linear-gradient(top,  #cecece 0%,#c7c7c7 50%,#bebebe 51%,#e7e7e7 100%); /* Chrome10+,Safari5.1+ */
+    background: -o-linear-gradient(top,  #cecece 0%,#c7c7c7 50%,#bebebe 51%,#e7e7e7 100%); /* Opera 11.10+ */
+    background: -ms-linear-gradient(top,  #cecece 0%,#c7c7c7 50%,#bebebe 51%,#e7e7e7 100%); /* IE10+ */
+    background: linear-gradient(to bottom,  #cecece 0%,#c7c7c7 50%,#bebebe 51%,#e7e7e7 100%); /* W3C */
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#cecece', endColorstr='#e7e7e7',GradientType=0 ); /* IE6-9 */
+    height: 100%;
+    text-align: center;
+    /*display: table;*/
+    font-size: 16pt;
+    /*background:*/
+      /*#C0C0C0;*/
+    border-right: 1px dotted white;  
+    color: #717171;
+}
+
+.menuItemSize {
+   height: 100%;
+    text-align: center;
+    /*display: table;*/
+    font-size: 16pt;
+    /*background:*/
+      /*#C0C0C0;*/
+    border-right: 1px dotted white;  
+    color: #717171;
+}
+
+.menuItemSize div {
+    vertical-align: middle;
+    font-family: "Calibri"; 
+    font-weight: bold;
+}
+
+.menuItem:hover {
+    /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#e5e696+0,d1d360+100;Wax+3D */
+    background: rgb(229,230,150); /* Old browsers */
+    background: -moz-linear-gradient(top,  rgba(229,230,150,1) 0%, rgba(209,211,96,1) 100%); /* FF3.6+ */
+    background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgba(229,230,150,1)), color-stop(100%,rgba(209,211,96,1))); /* Chrome,Safari4+ */
+    background: -webkit-linear-gradient(top,  rgba(229,230,150,1) 0%,rgba(209,211,96,1) 100%); /* Chrome10+,Safari5.1+ */
+    background: -o-linear-gradient(top,  rgba(229,230,150,1) 0%,rgba(209,211,96,1) 100%); /* Opera 11.10+ */
+    background: -ms-linear-gradient(top,  rgba(229,230,150,1) 0%,rgba(209,211,96,1) 100%); /* IE10+ */
+    background: linear-gradient(to bottom,  rgba(229,230,150,1) 0%,rgba(209,211,96,1) 100%); /* W3C */
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#e5e696', endColorstr='#d1d360',GradientType=0 ); /* IE6-9 */
+    border: none;
+
+    color: white;
+    cursor: pointer;
+}
+
+.menuItemPressed {
+    background: #c0c0c0; /* Old browsers */
+    background: -moz-linear-gradient(top,  #c0c0c0 0%, #bababa 50%, #b2b2b2 51%, #d8d8d8 100%); /* FF3.6+ */
+    background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#c0c0c0), color-stop(50%,#bababa), color-stop(51%,#b2b2b2), color-stop(100%,#d8d8d8)); /* Chrome,Safari4+ */
+    background: -webkit-linear-gradient(top,  #c0c0c0 0%,#bababa 50%,#b2b2b2 51%,#d8d8d8 100%); /* Chrome10+,Safari5.1+ */
+    background: -o-linear-gradient(top,  #c0c0c0 0%,#bababa 50%,#b2b2b2 51%,#d8d8d8 100%); /* Opera 11.10+ */
+    background: -ms-linear-gradient(top,  #c0c0c0 0%,#bababa 50%,#b2b2b2 51%,#d8d8d8 100%); /* IE10+ */
+    background: linear-gradient(to bottom,  #c0c0c0 0%,#bababa 50%,#b2b2b2 51%,#d8d8d8 100%); /* W3C */
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#c0c0c0', endColorstr='#d8d8d8',GradientType=0 ); /* IE6-9 */
+}
+
+.menuItemPressed:hover {
+  cursor: default;
+}
+
+#filmsByYearBtn {
+  padding-top: 5px;
+  width: 40%;
+  display: inline-block;
+    box-sizing: border-box;
+}
+
+#empty {
+  padding-top: 5px;
+  width: 39%;
+  display: inline-block;
+    box-sizing: border-box;
+    border: none;
+}
+#empty:hover {
+
+}
+
+#aboutBtn {
+  padding-top: 5px;
+  /*width: 207px;*/
+  width: 20%;
+  display: inline-block;
+    box-sizing: border-box;
+    border-right: none;
+    border-left: 1px dotted white;
+}
+
+#about {
+    height: 170px;
+    margin-top: 10px;
+    font-size: 15pt;
+    padding: 5px 30px 20px 30px;
+    box-sizing: border-box;
+    background: 
+        #E0E0E0;
+}
+
+p::first-letter {
+  font-size: 150%;
+  font-style: strong;
+}
+
+
+#searchByYear {
+    height: 170px;
+    margin-top: 10px;
+    text-align: center;
+    box-sizing: border-box;
+    background: 
+        #E0E0E0;
+    /*border: 1px dotted #99D6EB;*/
+}
+
+#searchByYear table {
+  width: 100%;
+  height: 100%;
+  /*border: 1px dotted #99D6EB;*/
+}
+
+#searchByYearDescription {
+  width: 40%;
+  height: 100%;
+  border-right: 1px dashed white;
+  text-align: left;
+  font-size: 15pt;
+  padding-bottom: 20px;
+  padding-left: 20px;
+  padding-right: 20px;
+}
+#searchByYearDescription div {
+  display: inline-block;
+}
+
+#searchByYearFields {
+  width: 40%;
+  height: 100%;
+  font-size: 15pt;
+}
+
+#inputGenres {
+  /*font-size: 20pt;*/
+  font-style: italic;
+}
+
+.genresRow {
+  margin-top: 10px;
+}
+
+.ratingRow {
+  margin-bottom: 10px;
+}
+
+#searchByYearFields td.label {
+  padding-right: 10px;
+  /*width: 30%;*/
+  /*height: 30px;*/
+  text-align: right;
+}
+
+#searchByYearFields  td.list {
+  /*width: 70%;*/
+  /*height: 30px;*/
+  text-align: left;
+}
+
+#searchByYearFields input, select {
+  width: 120px;
+  font-size: 12pt;
+}
+
+#searchByYearBtnTd {
+    width: 19%;
+  height: 100%;
+  border-left: 1px dashed white;
+  /*display: inline-block;*/
+    /*box-sizing: border-box;*/
+}
+
+#searchBtn {
+    background: #C0C0C0;
+    background-image: -webkit-linear-gradient(top, #C0C0C0, #999999);
+    background-image: -moz-linear-gradient(top, #C0C0C0, #999999);
+    background-image: -ms-linear-gradient(top, #C0C0C0, #999999);
+    background-image: -o-linear-gradient(top, #C0C0C0, #999999);
+    background-image: linear-gradient(to bottom, #C0C0C0, #999999);
+    -webkit-border-radius: 28;
+    -moz-border-radius: 28;
+    border-radius: 28px;
+    font-family: Georgia;
+    color: #717171;
+    font-size: 20px;
+    padding: 10px 20px 10px 20px;
+    text-decoration: none;
+    border: none;
+}
+
+#searchBtn:hover {
+    background: #e5e696;
+    background-image: -webkit-linear-gradient(top, #e5e696, #d1d360);
+    background-image: -moz-linear-gradient(top, #e5e696, #d1d360);
+    background-image: -ms-linear-gradient(top, #e5e696, #d1d360);
+    background-image: -o-linear-gradient(top, #e5e696, #d1d360);
+    background-image: linear-gradient(to bottom, #e5e696, #d1d360);
+    text-decoration: none;
+    color: white;
+    cursor: pointer;
+}
+
+#searchBtn:focus {
+  outline: none;
+}
+
+
+#films {
+    width: 100%;
+    margin-top: 10px;
+    margin-bottom: 3vh;
+    box-sizing: border-box;
+    background:
+       /*#E0E0E0;*/
+       white;
+    display: table;
+    padding: 10px;
+}
+
+#filmsTable {
+  border-bottom: none;
+}
+
+#footer {
+    background: #E0E0E0;
+    margin-top: 10px;
+    position: fixed;
+    bottom:0;
+    height:30px;
+    box-sizing: border-box;
+}
+
+#copyright {
+    padding-top: 5px;
+    padding-left: 10px;
+    color: grey;
+}
+
+#preloader {
+  position: absolute;
+  left: 0;
+  right: 0;
+  
+  margin: auto;
+  margin-top: 100px;
+  text-align: center;
+}
+#error {
+    font-size: 20pt;
+    position: absolute;
+    margin-top: 100px;
+    text-align: center;
+}
+
+#nothing {
+    font-size: 20pt;
+    position: absolute;
+    margin-top: 150px;
+    text-align: center;
+}
+/* ~~~~~~~~~~~~ Tooltip ~~~~~~~~~~~~~ */
+.ui-tooltip {
+    background: #666;
+    color: white;
+    border: none;
+    padding: 10;
+    opacity: 1;
+    max-width: 500px;
+    max-height: 500px;
+}
+/*
+.ui-tooltip-content {
+    position: relative;
+    padding: 10px;
+}
+.ui-tooltip-content::after {
+    content: '';
+    position: absolute;
+    border-style: solid;
+    display: block;
+    width: 0;
+}
+.top .ui-tooltip-content::after {
+    bottom: -10px;
+    left: 72px;
+    border-color: #666 transparent;
+    border-width: 10px 10px 0;   */ 
+}
+/* ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
+
+.noselect {
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+
+
+/* ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ TABLE ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
+.tableLink a {
+  text-decoration: none;
+  border-bottom: 1px dashed;
+  /*color: #757519;*/
+}
+
+.goodVotes a {
+  color: #757519;
+}
+
+.lowVotes, a {
+  color: #C0C0C0;
+}
+
+.tableLink a:hover {
+  border-bottom: none;
+}
+
+.loupe a:hover {
+  font-size: 12pt;
+}
+
+/* Stolen from here: http://tympanus.net/codrops/2013/08/06/creative-link-effects/ */
+/* Effect 1: Brackets */
+.cl-effect-1 a::before,
+.cl-effect-1 a::after {
+  display: inline-block;
+  opacity: 0;
+  -webkit-transition: -webkit-transform 0.3s, opacity 0.2s;
+  -moz-transition: -moz-transform 0.3s, opacity 0.2s;
+  transition: transform 0.3s, opacity 0.2s;
+}
+
+.cl-effect-1 a::before {
+  margin-right: 10px;
+  content: '[';
+  -webkit-transform: translateX(20px);
+  -moz-transform: translateX(20px);
+  transform: translateX(20px);
+}
+
+.cl-effect-1 a::after {
+  margin-left: 10px;
+  content: ']';
+  -webkit-transform: translateX(-20px);
+  -moz-transform: translateX(-20px);
+  transform: translateX(-20px);
+}
+
+.cl-effect-1 a:hover::before,
+.cl-effect-1 a:hover::after,
+.cl-effect-1 a:focus::before,
+.cl-effect-1 a:focus::after {
+  opacity: 1;
+  -webkit-transform: translateX(0px);
+  -moz-transform: translateX(0px);
+  transform: translateX(0px);
+}
+
+.center {
+  text-align: center;
+}
+
+/*table.display {
+margin: 0 auto;
+width: 100%;
+clear: both;
+border-collapse: collapse;
+table-layout: fixed; // ***********add this 
+word-wrap:break-word; // ***********and this 
+
+}*/

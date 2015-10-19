@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta content="text/html;charset=utf-8" http-equiv="Content-Type">
+    <meta content="utf-8" http-equiv="encoding">
+    <meta name="description" content="Find good films of all times by year, genre and ratings. Explore user ratings and votes from IMDB and RottenTomatoes">
+
+    <link rel="shortcut icon" type="image/x-icon" href="img/nfi.png" />
+
+    <link rel="stylesheet" type="text/css" href="https://code.jquery.com/ui/1.11.4/themes/smoothness/jquery-ui.css" />
+    <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.9/css/dataTables.jqueryui.min.css" />
+    <!-- <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.9/css/dataTables.jqueryui.min.css" /> -->
+
+    <script src="https://code.jquery.com/jquery-1.11.3.min.js"></script>
+    <script src="https://code.jquery.com/ui/1.11.4/jquery-ui.js"></script>
+    <script type="text/javascript" src="https://cdn.datatables.net/1.10.9/js/jquery.dataTables.min.js"></script>
+
+
+    <!-- jQuery UI ThemeRoller styling-->
+    <script type="text/javascript" src="https://cdn.datatables.net/1.10.9/js/dataTables.jqueryui.min.js"></script>
+
+
+
+
+    <link rel="stylesheet" type="text/css" href="css/style_2.css">
+    <script src="js/script.js"></script>
+    
+    <!--<link rel="stylesheet" type="text/css" href="css/normalize.css" />-->
+    <!--<link rel="stylesheet" type="text/css" href="css/demo.css" />-->
+    <!--<link rel="stylesheet" type="text/css" href="css/component.css" />-->
+    <!--<script src="js/modernizr.custom.js"></script>-->
+
+
+    <title>Films Info</title>
+    <script>
+        $( document ).ready(function() { main() });
+    </script>
+</head>
+<body>
+<div id="header"></div>
+
+<div id="menu">
+    <div class="menuItem menuItemSize noselect" id="filmsByYearBtn">
+        <div>Films By Year</div>
+    </div>
+    <div id="empty">
+        <div>&nbsp;</div>
+    </div>
+    <div class="menuItem menuItemSize noselect" id="aboutBtn">
+        <div>About</div>
+    </div>
+</div>
+
+<div id="searchByYear">
+    <table>
+        <tr>
+            <td id="searchByYearDescription">
+                <p>Specify genre, year and a&nbsp;minimum IMDB rating for films which you wish to&nbsp;find. The results will be&nbsp;displayed below.</p>
+            </td>
+            <td id="searchByYearFields">
+                <table>
+                    <tr>
+                        <td class="label" >
+                            <div class="genresRow">Genre</div>
+                        </td>
+
+                        <td class="list">
+                            <form>
+                                <input id="inputGenres" list="genresList" class="genresRow" value="*ANY* genre">
+                                <datalist id="genresList">
+                                    <option>*ANY* genre</option>
+                                    <option>Animation</option>
+                                    <option>Drama</option>
+                                    <option>Action</option>
+                                    <option>Horror</option>
+                                    <option>Thriller</option>
+                                    <option>Crime</option>
+                                    <option>Comedy</option>
+                                    <option>Sci-Fi</option>
+                                    <option>Fantasy</option>
+                                    <option>Adventure</option>
+                                    <option>Romance</option>
+                                    <option>Mystery</option>
+                                    <option>War</option>
+                                    <option>Western</option>
+                                    <option>Film-Noir</option>
+                                    <option>Musical</option>
+                                    <option>Documentary</option>
+                                    <option>History</option>
+                                    <option>Biography</option>
+                                    <option>Sport</option>
+                                </datalist>
+                            </form>
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td class="label">
+                            <span>Year</span>
+                        </td>
+
+                        <td class="list">
+                            <input id="inputYear" type="number" min="1" max="5" name="id" maxlength="4" title=""/>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="label">
+                            <div class="ratingRow">Rating</div>
+                        </td>
+
+                        <td class="list">
+                            <select id="inputRating" class="ratingRow" size="1">
+                                <option>6.5</option>
+                                <option>7.0</option>
+                                <option>7.5</option>
+                                <option>8.0</option>
+                                <option>8.5</option>
+                                <option>9.0</option>
+                                <option>9.5</option>
+                                <option>10.0</option>
+                            </select>
+                        </td>
+                    </tr>
+                </table>
+            </td>
+            <td id="searchByYearBtnTd">
+                <input id="searchBtn" type="submit" name="submit" value="Search" />
+                <div id="dialogInvalidInput">
+                    <p><span class="ui-icon ui-icon-alert" style="float:left; margin:0 7px 20px 0;"></span><div align="center">Invalid input</div></p>
+                </div>
+            </td>
+        </tr>
+    </table>
+</div>
+
+<div id="about">
+    <p><b>T</b>his site is&nbsp;intended to&nbsp;help to&nbsp;find all the good films that have been shot in&nbsp;the history of&nbsp;cinema. The information gathered from the three most competent and respected portals: <b><font color="#A3A300">IMDB</font></b>, <b><font color="#A32100">RottenTomatoes</font></b> and <b>Metacritic</b>. All you need is&nbsp;to&nbsp;choose year and minimum allowable IMDB rating. Since the ratings of&nbsp;those two portals are not always coincide with each other, that brings more objectivity in&nbsp;the summary information provided through this site.</p>
+</div>
+<div id="preloader"><img src="img/cup.gif" /></div>
+<div id="error"></div>
+<div id="nothing"></div>
+
+<div id="films">
+    <table id="filmsTable" class="display" cellspacing="0" width="100%">
+        <!-- <table id="filmsTable" class="table table-striped table-bordered" cellspacing="0" width="100%"> -->
+        <thead>
+        <tr>
+            <!-- <th rowspan="2" width="40%">Title</th>
+            <th rowspan="2" width="15%">Director</th>
+            <th colspan="2" width="20%">IMDB</th>
+            <th colspan="2" width="20%">Tomatoes</th>
+            <th rowspan="2" width="5%">Metascore</th> -->
+
+            <th rowspan="2">Title</th>
+            <th rowspan="2">Director</th>
+            <th colspan="2">IMDB</th>
+            <th colspan="2">Tomatoes</th>
+            <th rowspan="2">Metascore</th>
+        </tr>
+        <tr>
+            <th>Rating</th>
+            <th>Votes</th>
+            <th>Rating</th>
+            <th>Votes</th>
+        </tr>
+        </thead>
+        <tbody>
+        </tbody>
+    </table>
+
+</div>
+
+<div id="footer">
+    <div id="copyright">&copy; nice-films.info, 2015</div>
+</div>
+</body>
+</html>
