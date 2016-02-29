@@ -16,8 +16,9 @@ function main() {
     initMenu();
     initInputFields();
     initSearchButton();
-
-    aboutCategory.show();
+    filmsCategory.show();
+    // aboutCategory.show();
+    // aboutCategory.setBtnPressed();
     // getMoviesStub();
 
     $(document).tooltip({
@@ -278,33 +279,61 @@ function getMovies(request) {
     showPreload();
 
     $.ajax({
-        url: "search",
-        method: 'POST',
-        data: request,
-        error: function(jqXHR, textStatus, error) {
-            showError(jqXHR.status, textStatus, error);
-        },
-        success: function( json ) {
-            if (json.length == 0) {
-                showNothing();
-                return;
-            }
-            var films = [];
-            for (var i = 0; i < json.length; i++) {
-                var film = new Film(json[i]);
-                films[i] = film;
-            }
-            dataView.init(films);
-            dataView.show();
-            hidePreload();
-        }
+		url: "search",
+		method: 'POST',
+		data: request,
+		error: function(jqXHR, textStatus, error) {
+			showError(jqXHR.status, textStatus, error);
+		},
+		success: function( json ) {
+			if (json.length == 0) {
+				showNothing();
+				return;
+			}
+			var films = [];
+			for (var i = 0; i < json.length; i++) {
+				var film = new Film(json[i]);
+				films[i] = film;
+			}
+			dataView.init(films);
+			dataView.show();
+			hidePreload();
+		}
     });
 }
 
 function initInputFields() {
+    var min = 1900;
+    var max = (new Date).getFullYear();
     $("#dialogInvalidInput").hide();
-    $("#inputYear").attr("min", 1900);
-    $("#inputYear").attr("max", (new Date).getFullYear());
+    // $("#inputGenres").prop("disabled", true);
+    $("#inputYear").attr("min", min);
+    $("#inputYear").attr("max", max);
+
+
+    $("#inputYear").addClass('valid');
+    $("#inputYear").prop('maxLength','4');
+    $("#inputYear").keyup(function() {
+        var inp = $("#inputYear");
+        if (inp.val().length > 4) {
+            inp.val(inp.val().substring(0,4));
+        }
+
+        if (inp.val() < min || inp.val() > max) {
+            inp.removeClass('valid');
+            inp.addClass('invalid');
+            $("#searchBtn").prop("disabled", true);
+            $("#searchBtn").removeClass("buttonEnabled");
+            $("#searchBtn").addClass("buttonDisabled");
+        } else {
+            inp.removeClass('invalid');
+            inp.addClass('valid');
+            $("#searchBtn").prop("disabled", false);
+            $("#searchBtn").removeClass("buttonDisabled");
+            $("#searchBtn").addClass("buttonEnabled");
+        }
+    });
+
     var yTitle = $("#inputYear").attr("min") +
         " ... " + $("#inputYear").attr("max");
     $("#inputYear").attr("title", yTitle);
@@ -353,12 +382,35 @@ function showAlertInvalidInput() {
 }
 
 function initSearchButton() {
-    $("#searchBtn").click(function() {
+    // $("#searchBtn").click(function() {
 
-        if (isValidInput()) {
-            getMovies(getUserInput());
-        } else {
-            showAlertInvalidInput();
+    //     if (isValidInput()) {
+    //         getMovies(getUserInput());
+    //     } else {
+    //         showAlertInvalidInput();
+    //     }
+    // });
+    // if ($('#searchBtn').is(':disabled')) {
+
+    // }
+    $("#byYearForm").submit(function() {
+		getMovies(getUserInput());
+		return false;
+    });
+}
+
+function testGet() {
+	$.ajax({
+        url: "test",
+        method: 'GET',
+        data: "",
+        error: function(jqXHR, textStatus, error) {
+            showError(jqXHR.status, textStatus, error);
+        },
+        success: function( response ) {
+		console.log("response="+response);
+            $("#films").html(response);
+			$("#films").show();
         }
     });
 }
@@ -367,7 +419,9 @@ function getUserInput() {
     var year = $("#inputYear").val();
     var rating = $("#inputRating").val();
     var genre = $("#inputGenres").val().split(" ")[0].toLowerCase().replace(/\*/g,"");
-    var request = "year=" + year + "&minRating=" + rating + "&genre=" + genre;
+    var excludeIndian = $("#excludeIndianCheck").is(":checked");
+    var request = "year=" + year + "&minRating=" + rating + "&genre=" + genre + "&noindian=" + excludeIndian;
+    console.log(request);
     return request;
 }
 

@@ -138,7 +138,7 @@ public class Movie implements Comparable {
             field.setAccessible(true);
             try {
                 Object value = field.get(this);
-                if (value != null) {
+                if (value != null && !field.getName().equals("NOT_AVAILABLE")) {
                     jsonMap.put(field.getName(), value.toString());
                 }
             } catch (IllegalAccessException e) {
@@ -157,6 +157,7 @@ public class Movie implements Comparable {
 //
             for (Object object : jsonArray) {
                 JSONObject jsonObject = (JSONObject) object;
+                setTitle            (jsonObject.get("Title")            .toString());
                 setTomatoMeter      (jsonObject.get("tomatoMeter")      .toString());
                 setTomatoRating     (jsonObject.get("tomatoRating")     .toString());
                 setTomatoReviews    (jsonObject.get("tomatoReviews")    .toString());
@@ -171,7 +172,7 @@ public class Movie implements Comparable {
                 setActors           (jsonObject.get("Actors")           .toString());
                 String plot = jsonObject.get("Plot").toString().replaceAll("\"", "+");
                 setPlot             (plot             .toString());
-                setCountry(jsonObject.get("Country").toString());
+                setCountry          (jsonObject.get("Country").toString());
                 setAwards           (jsonObject.get("Awards")           .toString());
             }
         } catch (Exception e) {

@@ -22,18 +22,16 @@
 
 
 
-    <link rel="stylesheet" type="text/css" href="css/style_2.css">
+    <link rel="stylesheet" type="text/css" href="css/style.css">
     <script src="js/script.js"></script>
-    
-    <!--<link rel="stylesheet" type="text/css" href="css/normalize.css" />-->
-    <!--<link rel="stylesheet" type="text/css" href="css/demo.css" />-->
-    <!--<link rel="stylesheet" type="text/css" href="css/component.css" />-->
-    <!--<script src="js/modernizr.custom.js"></script>-->
 
 
     <title>Films Info</title>
     <script>
-        $( document ).ready(function() { main() });
+        $( document ).ready(function() { 
+            main();
+            console.log($("#excludeIndianCheck").is(':checked'));
+        });
     </script>
 </head>
 <body>
@@ -52,21 +50,22 @@
 </div>
 
 <div id="searchByYear">
+    <form action="" id="byYearForm" method="POST">
     <table>
         <tr>
             <td id="searchByYearDescription">
                 <p>Specify genre, year and a&nbsp;minimum IMDB rating for films which you wish to&nbsp;find. The results will be&nbsp;displayed below.</p>
             </td>
             <td id="searchByYearFields">
-                <table>
+                
+                <table class="inputFields">
                     <tr>
                         <td class="label" >
                             <div class="genresRow">Genre</div>
                         </td>
 
                         <td class="list">
-                            <form>
-                                <input id="inputGenres" list="genresList" class="genresRow" value="*ANY* genre">
+                                <select id="inputGenres" list="genresList" class="genresRow" value="*ANY* genre">
                                 <datalist id="genresList">
                                     <option>*ANY* genre</option>
                                     <option>Animation</option>
@@ -90,7 +89,7 @@
                                     <option>Biography</option>
                                     <option>Sport</option>
                                 </datalist>
-                            </form>
+                                </select>
                         </td>
                     </tr>
 
@@ -100,7 +99,7 @@
                         </td>
 
                         <td class="list">
-                            <input id="inputYear" type="number" min="1" max="5" name="id" maxlength="4" title=""/>
+                            <input id="inputYear" type="number" title=""/>
                         </td>
                     </tr>
                     <tr>
@@ -121,20 +120,30 @@
                             </select>
                         </td>
                     </tr>
+                    <tr>
+                        <td colspan="2" align="center">
+                            <input type="checkbox" id="excludeIndianCheck" checked><span id="excludeIndian">Exclude Indian films</span>
+                        </td>
+                    </tr>
                 </table>
             </td>
             <td id="searchByYearBtnTd">
-                <input id="searchBtn" type="submit" name="submit" value="Search" />
+                <input id="searchBtn" class="buttonEnabled" type="submit" value="Search"/>
                 <div id="dialogInvalidInput">
                     <p><span class="ui-icon ui-icon-alert" style="float:left; margin:0 7px 20px 0;"></span><div align="center">Invalid input</div></p>
                 </div>
             </td>
         </tr>
     </table>
+    </form>
 </div>
 
 <div id="about">
-    <p><b>T</b>his site is&nbsp;intended to&nbsp;help to&nbsp;find all the good films that have been shot in&nbsp;the history of&nbsp;cinema. The information gathered from the three most competent and respected portals: <b><font color="#A3A300">IMDB</font></b>, <b><font color="#A32100">RottenTomatoes</font></b> and <b>Metacritic</b>. All you need is&nbsp;to&nbsp;choose year and minimum allowable IMDB rating. Since the ratings of&nbsp;those two portals are not always coincide with each other, that brings more objectivity in&nbsp;the summary information provided through this site.</p>
+    <p><b>T</b>his site is&nbsp;intended to&nbsp;help to&nbsp;find all the good films that have been shot in&nbsp;the history of&nbsp;cinema. 
+	The information gathered from the three most competent and respected portals: 
+	<b><font color="#A3A300">IMDB</font></b>, <b><font color="#A32100">RottenTomatoes</font></b> and <b>Metacritic</b>. 
+	All you need is&nbsp;to&nbsp;choose year and minimum allowable IMDB rating. Since the ratings of&nbsp;those two portals are not always coincide with each other, 
+	that brings more objectivity in&nbsp;the summary information provided through this site.</p>
 </div>
 <div id="preloader"><img src="img/cup.gif" /></div>
 <div id="error"></div>
@@ -171,7 +180,36 @@
 </div>
 
 <div id="footer">
-    <div id="copyright">&copy; nice-films.info, 2015</div>
+    <div id="copyright">&copy; nice-films.info, 2015 |</div>
+    <div id="contact"><a href="mailto:admin@nice-films.info"><font>contact</font></a></div>
 </div>
+<!-- Yandex.Metrika counter -->
+<script type="text/javascript">
+    (function (d, w, c) {
+        (w[c] = w[c] || []).push(function() {
+            try {
+                w.yaCounter33152138 = new Ya.Metrika({
+                    id:33152138,
+                    clickmap:true,
+                    trackLinks:true,
+                    accurateTrackBounce:true
+                });
+            } catch(e) { }
+        });
+
+        var n = d.getElementsByTagName("script")[0],
+            s = d.createElement("script"),
+            f = function () { n.parentNode.insertBefore(s, n); };
+        s.type = "text/javascript";
+        s.async = true;
+        s.src = "https://mc.yandex.ru/metrika/watch.js";
+
+        if (w.opera == "[object Opera]") {
+            d.addEventListener("DOMContentLoaded", f, false);
+        } else { f(); }
+    })(document, window, "yandex_metrika_callbacks");
+</script>
+<noscript><div><img src="https://mc.yandex.ru/watch/33152138" style="position:absolute; left:-9999px;" alt="" /></div></noscript>
+<!-- /Yandex.Metrika counter -->
 </body>
 </html>

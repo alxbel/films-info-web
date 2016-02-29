@@ -14,11 +14,11 @@ public class ServerConstants {
     }
 
     public static class Defaults {
-        private static final Integer CURRENT_YEAR = new GregorianCalendar().get(Calendar.YEAR);
-        public static final Integer MIN_YEAR = 1960;
+        public static final Integer CURRENT_YEAR = new GregorianCalendar().get(Calendar.YEAR);
+        public static final Integer MIN_YEAR = 1900;
         public static final Integer YEAR_DIFF = CURRENT_YEAR - MIN_YEAR;
 //        public static final Integer DEFAULT_YEAR = new Integer(MIN_YEAR + new Random().nextInt(YEAR_DIFF));
-        public static final Integer DEFAULT_YEAR = 2005;
-        public static final Double DEFAULT_MIN_RATING = 8.2;
+        public static final Integer DEFAULT_YEAR = 2010;
+        public static final Double DEFAULT_MIN_RATING = 8.5;
     }
 }
