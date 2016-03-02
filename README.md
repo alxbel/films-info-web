@@ -8,6 +8,9 @@ The information is gathered from:
 • <b>Metacritic</b>    
   
 You need to choose year and minimum allowable IMDB rating.
+## Hosts  
+www.nice-films.info  
+https://nicefilms-lexblacken.rhcloud.com/
 ## Overview  
 www.nice-films.info  
 https://nicefilms-lexblacken.rhcloud.com/
