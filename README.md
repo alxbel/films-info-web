@@ -2,9 +2,10 @@
 ## Description
 This website shows info about any good films that have been shot in the history of cinema. 
 The information is gathered from:  
-• IMDB  
-• RottenTomatoes  
-• Metacritic    
+• <b>IMDB</b>  
+• <b>RottenTomatoes</b>  
+• <b>Metacritic</b>    
+  
 You need to choose year and minimum allowable IMDB rating.
 ## Overview  
 www.nice-films.info  
