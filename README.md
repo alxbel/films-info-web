@@ -1,4 +1,4 @@
-# Webapp films info aggregator 
+# Movie info aggregator 
 ## Description
 This website shows info about any good films that have been shot in the history of cinema.  
   
